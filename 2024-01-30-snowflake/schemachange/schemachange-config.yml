@@ -1,0 +1,10 @@
+config-version: 1
+
+root-folder: '.'
+snowflake-role: 'ACCOUNTADMIN'
+snowflake-database: 'METADATA'
+snowflake-warehouse: 'COMPUTE_WH'
+snowflake-user: 'jasdarn3'
+snowflake-account: 'vannzer-ow07395'
+snowflake-schema: 'METADATA.SCHEMACHANGE'
+create-change-history-table: true
