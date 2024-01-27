@@ -42,3 +42,11 @@ CREATE TABLE IF NOT EXISTS silver.fundamentals (
     dividends_paid FLOAT,
     free_cash_flow FLOAT
 );
+
+
+CREATE TABLE IF NOT EXISTS gold.metrics (
+    symbol VARCHAR,
+    statement_year VARCHAR,
+    revenue_growth FLOAT,
+    debt_to_cash FLOAT
+);
