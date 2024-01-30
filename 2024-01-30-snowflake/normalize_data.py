@@ -14,7 +14,7 @@ CONNECT_KWGS = {
     "password": os.environ["SNOWFLAKE_PASSWORD"],
     "account": os.environ["SNOWFLAKE_ACCOUNT"],
     "warehouse": 'COMPUTE_WH',
-    "database": 'LLAMA',
+    "database": 'DEMO',
     "schema": 'bronze',
     "role": "ACCOUNTADMIN"
 }
@@ -51,10 +51,10 @@ def main():
                cf_stmt:dividendsPaid as dividends_paid 
         FROM (
             SELECT inc_stmts.symbol, inc_stmts.calendar_year, inc_stmts.period, PARSE_JSON(inc_stmts.statement) as inc_stmt, PARSE_JSON(bs_stmts.statement) as bs_stmt, PARSE_JSON(cf_stmts.statement) as cf_stmt
-            FROM llama.bronze.fmp_income_statements inc_stmts
-            JOIN llama.bronze.fmp_balance_sheet_statements bs_stmts
+            FROM demo.bronze.fmp_income_statements inc_stmts
+            JOIN demo.bronze.fmp_balance_sheet_statements bs_stmts
             ON inc_stmts.symbol = bs_stmts.symbol AND inc_stmts.calendar_year = bs_stmts.calendar_year AND inc_stmts.period = bs_stmts.period
-            JOIN llama.bronze.fmp_cash_flow_statements cf_stmts
+            JOIN demo.bronze.fmp_cash_flow_statements cf_stmts
             ON inc_stmts.symbol = cf_stmts.symbol AND inc_stmts.calendar_year = cf_stmts.calendar_year AND inc_stmts.period = cf_stmts.period
         )
     """

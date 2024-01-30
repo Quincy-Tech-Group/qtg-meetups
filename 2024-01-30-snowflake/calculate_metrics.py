@@ -14,7 +14,7 @@ CONNECT_KWGS = {
     "password": os.environ["SNOWFLAKE_PASSWORD"],
     "account": os.environ["SNOWFLAKE_ACCOUNT"],
     "warehouse": 'COMPUTE_WH',
-    "database": 'LLAMA',
+    "database": 'DEMO',
     "schema": 'gold',
     "role": "ACCOUNTADMIN"
 }
@@ -39,7 +39,7 @@ def main():
             revenue / LAG(revenue, 4) OVER (PARTITION BY symbol ORDER BY statement_date)-1 AS revenue_growth,
             total_debt / cash_and_cash_equivalents as debt_to_cash
         FROM 
-            llama.silver.fundamentals
+            demo.silver.fundamentals
         ORDER BY 
             symbol, statement_date;
     """

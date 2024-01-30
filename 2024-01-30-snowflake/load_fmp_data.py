@@ -17,7 +17,7 @@ CONNECT_KWGS = {
     "password": os.environ["SNOWFLAKE_PASSWORD"],
     "account": os.environ["SNOWFLAKE_ACCOUNT"],
     "warehouse": 'COMPUTE_WH',
-    "database": 'LLAMA',
+    "database": 'DEMO',
     "schema": 'bronze',
     "role": "ACCOUNTADMIN"
 }
