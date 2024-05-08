@@ -5,7 +5,7 @@ from tqdm import tqdm
 from snowflake.snowpark.functions import when_matched, when_not_matched
 from snowflake.snowpark import Session
 
-from llama.fmp.fmp_client import FmpClient
+from llama.fmp.fmp_clientimport FmpClient
 
 
 fmp_client = FmpClient()
