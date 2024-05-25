@@ -1,7 +1,9 @@
 import os
 import argparse
 
+import requests
 from openai import OpenAI, Moderation
+from PIL import Image
 
 
 client = OpenAI(
@@ -42,7 +44,17 @@ def main():
 
   image_url = response.data[0].url
 
-  print(image_url)
+  file_name = args.prompt.replace(" ", "_").lower() + ".png"
+  path = os.path.join("img", file_name)
+
+  print("Downloading...")
+  with open(path, 'wb') as f:
+      f.write(requests.get(image_url).content)
+
+  print(f"Saved to img/{file_name}.")
+
+  img = Image.open(path)
+  img.show()
 
 
 if __name__ == "__main__":

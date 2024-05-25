@@ -42,6 +42,7 @@ def main():
   _check_moderation(args.prompt)
   completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
+    response_format={ "type": "json_object" },
     messages=[
       {"role": "system", "content": f"Give ten questions and answers. Give the answer using valid JSON. Use a 'questions' field that contains objects with 'question' and 'answer' fields. Responses should be for grade {args.grade}."},
       {"role": "user", "content": args.prompt}

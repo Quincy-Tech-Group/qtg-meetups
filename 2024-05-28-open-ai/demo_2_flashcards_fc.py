@@ -57,7 +57,7 @@ def main():
                       f"grade level {args.grade}."},
           {"role": "user",
            "content": f"Generate {args.num_questions} questions and answers "
-                      f"for the following topic: {args.prompt}"}
+                      f"for the following topic: {args.prompt}."}
       ],
       functions=[GET_QA_FUNCTION],
       function_call={"name": "generate_questions_and_answers"}
