@@ -20,7 +20,7 @@ def _get_args():
   parser = argparse.ArgumentParser()
   parser.add_argument('prompt', type=str)
   parser.add_argument('--grade',  type=int, default=4)
-  parser.add_argument('--num-questions',  type=int, default=5)
+  parser.add_argument('--num-questions',  type=int, default=10)
   args = parser.parse_args()
   return args
 
